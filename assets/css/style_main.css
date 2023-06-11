@@ -1,0 +1,23 @@
+.titulo_main {
+    text-align: center;
+    font-size: 80px;
+}
+
+.container_main {
+    margin: auto;
+}
+
+.container_main h2 {
+    text-align: center;
+}
+
+.botões {
+    text-align: center;
+}
+
+.btn {
+    padding: 40px;
+    width: 60%;
+    margin: 20px;
+    font-size: 30px;
+}

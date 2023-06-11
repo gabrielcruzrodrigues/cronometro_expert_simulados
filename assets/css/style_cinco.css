@@ -1,0 +1,69 @@
+body {
+    background-color: rgba(197, 197, 197, 0.61);
+}
+
+
+.title_header {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.relogio {
+    display: flex;
+    background-color: #ff6f09;
+    height: 600px;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+.bloco {
+    background-color: white;
+    display: block;
+    margin: 60px auto;
+    width: 500px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.texto_bloco {
+    font-size: 400px;
+    margin-bottom: 1000px;
+}
+
+.btn_1 {
+    height: 100px;
+    width: 400px;
+    margin-left: 25px;
+    border-radius: 30px;
+    margin-top: 20px;
+    border: 2px solid #0000009f;
+    font-size: 30px;
+    font-weight: 500
+    ;
+}
+
+#Iniciar {
+    background-color: rgb(1, 179, 1);
+}
+
+#Iniciar:active {
+    background-color: rgb(2, 221, 2);
+}
+
+#Pausar {
+    background-color: rgba(190, 190, 190, 0.932);
+}
+
+#Pausar:active {
+    background-color: rgb(255, 63, 4);
+}
+
+#Reiniciar {
+    background-color: rgba(1, 4, 196, 0.747);
+}
+
+#Reiniciar:active {
+    background-color: rgba(0, 4, 255, 0.747);
+}
