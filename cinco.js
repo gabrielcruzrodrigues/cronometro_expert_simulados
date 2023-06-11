@@ -22,7 +22,7 @@ let ponto = -1;
 // funções
 function iniciarFunc() {
     title.innerHTML = 'A contagem começou⏳';
-    btnIniciar.innerHTML = 'contando...'
+    btnIniciar.innerHTML = 'contando...⏳'
     iniciarCronometro();
 };
 
@@ -65,39 +65,39 @@ function alteraRelogio() {
 
         console.log(`ponto: ${ponto}`);
 
-        if (ponto == 0) {    // 04:30
+        if (ponto == 0) {    // 05:00
             hora.innerHTML = '04';
             minuto.innerHTML = '30';
 
-        } else if (ponto == 1) { //04:00
+        } else if (ponto == 1) { //04:30
             hora.innerHTML = '04';
             minuto.innerHTML = '00';
 
-        } else if (ponto == 2) { // 03:30
+        } else if (ponto == 2) { // 04:00
             hora.innerHTML = '03';
             minuto.innerHTML = '30';
 
-        } else if (ponto == 3) { //03:00
+        } else if (ponto == 3) { //03:30
             hora.innerHTML = '03';
             minuto.innerHTML = '00';
 
-        } else if (ponto == 4) { //02:30
+        } else if (ponto == 4) { //03:00
             hora.innerHTML = '02';
             minuto.innerHTML = '30';
 
-        } else if (ponto == 5) { //02:00
+        } else if (ponto == 5) { //02:30
             hora.innerHTML = '02';
             minuto.innerHTML = '00';
 
-        } else if (ponto == 6) { //01:30
+        } else if (ponto == 6) { //02:00
             hora.innerHTML = '01';
             minuto.innerHTML = '30';
 
-        } else if (ponto == 7) { //01:00
+        } else if (ponto == 7) { //01:30
             hora.innerHTML = '01';
             minuto.innerHTML = '00';
 
-        } else if (ponto == 8) { //00:30
+        } else if (ponto == 8) { //01:00
             hora.innerHTML = '00';
             minuto.innerHTML = '30';
 
@@ -108,6 +108,7 @@ function alteraRelogio() {
 };
 
 let pisca;
+let audio = new Audio('alarme.mp3');
 
 function finalDeSimulado() {
     function piscarTela() {
@@ -118,6 +119,10 @@ function finalDeSimulado() {
 
     // Chama a função piscarTela a cada 500 milissegundos (0,5 segundos)
     pisca = setInterval(piscarTela, 500);
+
+    //musica
+    audio.play();
+
 }
 
 //reinicia todo o sistema
@@ -133,8 +138,9 @@ function reiniciarFunc() {
         clearInterval(pisca);
         console.log('parar de piscar');
     });
-    var corAtual = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = corAtual;
+
+    
+    document.body.style.backgroundColor = 'rgba(197, 197, 197, 0.61)';
 
     title.innerHTML = 'Aperte Iniciar para começar';
     btnIniciar.innerHTML = 'Iniciar';
@@ -149,8 +155,12 @@ function reiniciarFunc() {
     });
     ponto15 = -1;
 
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    };
     console.log('reiniciar func ativado')
-};
+}
 
 //função de 15 minutos
 //variaveis importantes
@@ -206,4 +216,4 @@ function alteraRelogio15() {
         } 
     }
     alteracao15();
-};
+}

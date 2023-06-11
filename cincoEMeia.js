@@ -111,6 +111,7 @@ function alteraRelogio() {
 };
 
 let pisca;
+let audio = new Audio('alarme.mp3');
 
 function finalDeSimulado() {
     function piscarTela() {
@@ -121,6 +122,9 @@ function finalDeSimulado() {
 
     // Chama a função piscarTela a cada 500 milissegundos (0,5 segundos)
     pisca = setInterval(piscarTela, 500);
+
+    //musica
+    audio.play();
 }
 
 //reinicia todo o sistema
@@ -136,8 +140,8 @@ function reiniciarFunc() {
         clearInterval(pisca);
         console.log('parar de piscar');
     });
-    var corAtual = document.body.style.backgroundColor;
-    document.body.style.backgroundColor = corAtual;
+   
+    document.body.style.backgroundColor = 'rgba(197, 197, 197, 0.61)';
 
     title.innerHTML = 'Aperte Iniciar para começar';
     btnIniciar.innerHTML = 'Iniciar';
@@ -151,6 +155,11 @@ function reiniciarFunc() {
         console.log('parar de piscar');
     });
     ponto15 = -1;
+
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    };
 
     console.log('reiniciar func ativado')
 };
